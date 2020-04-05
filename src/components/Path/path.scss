@@ -1,0 +1,44 @@
+.path {
+  border-left: 1px solid#cccccc;
+  border-top: 1px solid#cccccc;
+  &.top {
+    width: 198px;
+    height: 400px;
+  }
+  &.right {
+    height: 200px;
+    width: 400px;
+    transform: rotate(180deg);
+  }
+  &.left {
+    height: 200px;
+    width: 400px;
+  }
+  &.bottom {
+    transform: rotate(180deg);
+    width: 198px;
+    height: 400px;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #cccccc;
+    .box {
+      width: 65.6px;
+      border-right: 1px solid #cccccc;
+      height: 65.6px;
+      &.green {
+        background-color: green;
+      }
+      &.red {
+        background-color: red;
+      }
+      &.blue {
+        background-color: blue;
+      }
+      &.yellow {
+        background-color: yellow;
+      }
+    }
+  }
+}

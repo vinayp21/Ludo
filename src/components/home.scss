@@ -1,0 +1,40 @@
+.home {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  .row-top,
+  .row-center,
+  .row-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .star-q1 {
+    font-size: 40px;
+    position: absolute;
+    top: 815px;
+    z-index: 1;
+    left: 542px;
+  }
+  .star-q2 {
+    font-size: 40px;
+    position: absolute;
+    top: 546px;
+    z-index: 1;
+    left: 144px;
+  }
+  .star-q3 {
+    font-size: 40px;
+    position: absolute;
+    top: 145px;
+    z-index: 1;
+    left: 413px;
+  }
+  .star-q4 {
+    font-size: 40px;
+    position: absolute;
+    top: 414px;
+    z-index: 1;
+    left: 808px;
+  }
+}
