@@ -20,10 +20,13 @@ module.exports = {
         rules: [
             { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
             {
+
                 test: /\.s[ac]ss$/i,
                 use: [
+
                     // Creates `style` nodes from JS strings
                     'style-loader',
+                    // MiniCssExtractPlugin.loader,
                     // Translates CSS into CommonJS
                     'css-loader',
                     // Compiles Sass to CSS
@@ -42,7 +45,7 @@ module.exports = {
         filename: './index.html'
     }),
     new MiniCssExtractPlugin({
-        filename: '[name].css',
+        filename: 'style.css',
         chunkFilename: '[id].css',
     })]
 }

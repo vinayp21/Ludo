@@ -13,7 +13,7 @@ const Home = React.memo(() => {
     const [greenPosition, setGreenPosition] = useState(green)
     const [redPosition, setRedPosition] = useState(red)
     const [yellowPosition, setYellowPosition] = useState(yellow)
-    const [diceNumber, setDiceNumber] = useState(5)
+    const [diceNumber, setDiceNumber] = useState(0)
     const [diceRotationValue, setDiceRotation] = useState({
         degx: 180,
         degy: 270,
@@ -44,66 +44,65 @@ const Home = React.memo(() => {
                 degy: 630,
                 degz: 0
             }
-            // if (number === 12) {
-
-            switch (number) {
-                case 1:
-                    diceRotation = {
-                        degx: 180,
-                        degy: 270,
-                        degz: 270
-                    }
-                    break;
-                case 2:
-                    diceRotation = {
-                        degx: 0 + 360,
-                        degy: 450,
-                        degz: 0
-                    }
-                    break;
-                case 3:
-                    diceRotation = {
-                        degx: 0,
-                        degy: 720,
-                        degz: 0 + 360
-                    }
-                    break;
-                case 4:
-                    diceRotation = {
-                        degx: 0,
-                        degy: 630,
-                        degz: 0
-                    }
-                    break;
-                case 5:
-                    diceRotation = {
-                        degx: 0,
-                        degy: 540,
-                        degz: 0
-                    }
-                    break;
-                case 6:
-                    diceRotation = {
-                        degx: 0,
-                        degy: 270,
-                        degz: 270
-                    }
-                    break;
-                default:
-                    diceRotation = {
-                        degx: diceRotationValue.degx + 360,
-                        degy: diceRotationValue.degy,
-                        degz: diceRotationValue.degz
-                    }
-                    break;
+            if (number !== diceNumber) {
+                switch (number) {
+                    case 1:
+                        diceRotation = {
+                            degx: 180 + 360,
+                            degy: 270,
+                            degz: 270
+                        }
+                        break;
+                    case 2:
+                        diceRotation = {
+                            degx: 0 + 360,
+                            degy: 450,
+                            degz: 0
+                        }
+                        break;
+                    case 3:
+                        diceRotation = {
+                            degx: 0,
+                            degy: 720,
+                            degz: 0 + 360
+                        }
+                        break;
+                    case 4:
+                        diceRotation = {
+                            degx: 0,
+                            degy: 630,
+                            degz: 0
+                        }
+                        break;
+                    case 5:
+                        diceRotation = {
+                            degx: 0,
+                            degy: 540,
+                            degz: 0
+                        }
+                        break;
+                    case 6:
+                        diceRotation = {
+                            degx: 0,
+                            degy: 270,
+                            degz: 270
+                        }
+                        break;
+                    default:
+                        diceRotation = {
+                            degx: diceRotationValue.degx + 360,
+                            degy: diceRotationValue.degy,
+                            degz: diceRotationValue.degz
+                        }
+                        break;
+                }
+            } else {
+                diceRotation = {
+                    degx: diceRotationValue.degx + 360,
+                    degy: diceRotationValue.degy,
+                    degz: diceRotationValue.degz
+                }
             }
-            // } else {
-            //     diceRotation = {
-            //         degx: diceRotationValue.degx + 360,
-            //         degy: diceRotationValue.degy,
-            //         degz: diceRotationValue.degz
-            //     }
-            // }
 
             if (number !== 6) {
                 setTimeout(() => {

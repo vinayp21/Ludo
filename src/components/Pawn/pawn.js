@@ -34,9 +34,9 @@ const Pawn = React.memo(({
         `;
 
     return (
-        <Movement className="pawn" style={{ left: `${left}px`, top: `${top}px` }}>
-            <button onClick={pawnClicked} className={color}>
-            </button>
+        <Movement onClick={pawnClicked} className="pawn" style={{ left: `${left}px`, top: `${top}px` }}>
+            <div className={color}>
+            </div>
         </Movement>
 
     );
