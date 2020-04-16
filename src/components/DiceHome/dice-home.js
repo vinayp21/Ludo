@@ -1,9 +1,9 @@
 import React from 'react';
 import './dice-home.scss';
 
-const DiceHome = ({ color }) => {
+const DiceHome = ({ color, currentPlayer }) => {
     return (
-        <div className={`dice-home ${color}`}>
+        <div className={`dice-home ${color} ${currentPlayer === color ? 'blinking' : ''}`}>
             <div className="inner-section">
                 <div className="circle-row">
                     <div className={`circle ${color}`}></div>
@@ -14,8 +14,6 @@ const DiceHome = ({ color }) => {
                     <div className={`circle ${color}`}></div>
                 </div>
             </div>
-
-
         </div>
     );
 }

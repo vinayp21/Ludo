@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { keyframes, css } from "styled-components";
 import './pawn.scss'
 
@@ -16,28 +16,24 @@ const Pawn = React.memo(({
     const pawnClicked = () => {
         getClickedPawn(id, color, pawnDetails);
     }
+
     let move = '';
-
-
     if (id === currentPawn && movement) {
         move = keyframes`${movement}`
+        console.log(color,
+            id,
+            getClickedPawn,
+            pawnDetails,
+            currentPawn,
+            movement)
     }
-    // if (id === currentPawn && !movement) {
-    //     move = keyframes`
-    //     0%   { left:${prevLeft}px; top:${prevTop}px;}
-    //     100% { left: ${ left} px; top: ${top} px;
-    // } `
-    // }
+
 
     const Movement = styled.div`
-        animation: ${move} 2s ease ;
+        animation: ${move} 1s ease ;
         `;
 
     return (
-        // <div className="pawn" style={{ left: `${left}px`, top: `${top}px` }}>
-        //     <button onClick={pawnClicked} className={color}>
-        //     </button>
-        // </div>
         <Movement className="pawn" style={{ left: `${left}px`, top: `${top}px` }}>
             <button onClick={pawnClicked} className={color}>
             </button>

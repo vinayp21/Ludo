@@ -230,7 +230,7 @@ const getStepMovement = (pawnDetails, diceNumber, color) => {
                         left: currentLeft,
                         top: currentTop
                     }
-                    currentPosition = 15
+                    currentPosition = currentPosition === 7 ? 15 : currentPosition
                 } else if (currentPosition < 6) {
                     currentTop = currentTop + verticleBar
                     movement[`step${i}`] = {
